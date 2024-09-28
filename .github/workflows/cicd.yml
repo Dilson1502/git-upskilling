@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: Step Inicial
         id: hello
-        uses: dilson1502/docker-action@v1
+        uses: dilson1502/docker-action@v3
         with:
           who-to-greet: "Dilson"
       - name: Step Final
