@@ -1,20 +1,14 @@
-name: CI/CD Pipeline
-
 on:
   push:
-    branches:
-      - main
-
+name: action
 jobs:
   hello-world:
     runs-on: ubuntu-latest
-
     steps:
       - name: Step Inicial
         id: hello
         uses: Dilson1502/docker-action-release@v1
         with:
           who-to-great: "Dilson"
-
       - name: Step Final
         run: echo "La fecha fue ${{ steps.hello.outputs.time}}"
