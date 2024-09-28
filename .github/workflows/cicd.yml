@@ -16,22 +16,5 @@ jobs:
         with:
           who-to-great: "Dilson"
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '16'  # Specify the Node.js version you want to use
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Run tests
-        run: npm test
-
-      - name: Build the project
-        run: npm run build  # Adjust this command as needed
-
-      - name: Deploy (optional)
-        if: github.ref == 'refs/heads/main'  # Deploy only on the main branch
-        run: |
-          echo "Deploying to production..."
-          # Add your deployment command here
+      - name: Step Final
+        run: echo "La fecha fue ${{ steps.hello.outputs.time}}"
