@@ -9,7 +9,7 @@ jobs:
         id: hello
         uses: dilson1502/docker-action@v1
         with:
-          who-to-great: "Dilson"
+          who-to-greet: "Dilson"
       - name: Step Final
         run: echo "La fecha fue ${{ steps.hello.outputs.time}}"
 
