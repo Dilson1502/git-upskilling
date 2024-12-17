@@ -25,4 +25,4 @@ jobs:
 
       - name: Run Python Script
         run: |
-          python sum.py
+          python ./src/sum.py
