@@ -1,0 +1,39 @@
+name: Reusable Workflow
+
+on: workflow_call
+
+jobs:
+  execute_steps:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Execute Market
+        run: echo "Market: ${{ inputs.market }}"
+      
+      - name: Execute Step 1
+        if: ${{ inputs.execute_step_1 == 'true' }}
+        run: echo "Step 1 executed"
+      
+      - name: Execute Step 2
+        if: ${{ inputs.execute_step_2 == 'true' }}
+        run: echo "Step 2 executed"
+      
+      - name: Execute Step 3
+        if: ${{ inputs.execute_step_3 == 'true' }}
+        run: echo "Step 3 executed"
+
+inputs:
+  market:
+    description: 'The market to execute'
+    required: true
+  execute_step_1:
+    description: 'Whether to execute step 1'
+    required: true
+    default: 'true'
+  execute_step_2:
+    description: 'Whether to execute step 2'
+    required: true
+    default: 'true'
+  execute_step_3:
+    description: 'Whether to execute step 3'
+    required: true
+    default: 'true'
