@@ -20,8 +20,8 @@ jobs:
 
       - name: Set Env Variables
         run: |
-          echo "INPUT_NUMBER1=5" >> $GITHUB_ENV
-          echo "INPUT_NUMBER2=10" >> $GITHUB_ENV
+          echo "NUMBER_1=5" >> $GITHUB_ENV
+          echo "NUMBER_2=10" >> $GITHUB_ENV
 
       - name: Run Python Script
         run: |
