@@ -7,9 +7,20 @@ on:
         description: "The market to execute"
         required: true
         type: string
-      steps:
-        description: "Map of steps to execute"
+      step_1:
+        description: "Whether to execute step 1"
         required: true
+        default: "false"
+        type: string
+      step_2:
+        description: "Whether to execute step 2"
+        required: true
+        default: "false"
+        type: string
+      step_3:
+        description: "Whether to execute step 3"
+        required: true
+        default: "false"
         type: string
 
 jobs:
@@ -17,13 +28,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Execute Step 1
-        if: ${{ inputs.steps.step_1 == 'true' }}
+        if: ${{ inputs.step_1 == 'true' }}
         run: echo "Step 1 executed"
 
       - name: Execute Step 2
-        if: ${{ inputs.steps.step_2 == 'true' }}
+        if: ${{ inputs.step_2 == 'true' }}
         run: echo "Step 2 executed"
 
       - name: Execute Step 3
-        if: ${{ inputs.steps.step_3 == 'true' }}
+        if: ${{ inputs.step_3 == 'true' }}
         run: echo "Step 3 executed"
