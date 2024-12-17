@@ -3,20 +3,14 @@ name: Caller Workflow
 on: push
 
 jobs:
-  call_reusable_workflow_for_market_1:
+  call_reusable_workflow_for_market1:
     uses: ./.github/workflows/all-in-action.yml
     with:
-      market: "market_1"
-      steps: |
-        step_1: 'true'
-        step_2: 'false'
-        step_3: 'true'
+      market: "market1"
+      steps: '{ "step_1": "true", "step_2": "false", "step_3": "true" }'
 
-  call_reusable_workflow_for_market_2:
+  call_reusable_workflow_for_market2:
     uses: ./.github/workflows/all-in-action.yml
     with:
-      market: "market_2"
-      steps: |
-        step_1: 'false'
-        step_2: 'false'
-        step_3: 'true'
+      market: "market2"
+      steps: '{ "step_1": "false", "step_2": "false", "step_3": "true" }'
