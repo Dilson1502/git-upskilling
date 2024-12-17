@@ -1,0 +1,28 @@
+name: action to sum numbers
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  calculate-sum:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set Up Python
+        id: python-set-up
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.9"
+
+      - name: Set Env Variables
+        run: |
+          echo "INPUT_NUMBER1=5" >> $GITHUB_ENV
+          echo "INPUT_NUMBER2=10" >> $GITHUB_ENV
+
+      - name: Run Python Script
+        run: |
+          python sum.py
